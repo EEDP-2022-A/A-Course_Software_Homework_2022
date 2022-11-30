@@ -20,8 +20,8 @@ def generate_theta_random(n: int):
 
 
 def calc_xy(radius, theta: list, x0, y0):
-    x = radius * np.cos(theta)
-    y = radius * np.sin(theta)
+    x = radius * np.cos(np.radians(theta))
+    y = radius * np.sin(np.radians(theta))
     return np.array((x+x0, y+y0)).reshape(-1, 2)
 
 
