@@ -20,10 +20,10 @@ def generate_theta_random(n: int):
     return theta_array
 
 
-def calc_xy(radius, theta: list, x0, y0):
+def calc_xy(radius, theta: list, x0, y0) -> tuple:
     x = radius * np.cos(theta)
     y = radius * np.sin(theta)
-    return x+x0, y+y0
+    return np.array((x+x0, y+y0)).reshape(-1, 2)
 
 
 if __name__ == '__main__':
@@ -40,6 +40,6 @@ if __name__ == '__main__':
     elif choice == 2:
         thetas = generate_theta_random(n)
 
-    print(calc_xy(r, thetas, x0, y0))
+    coordinates = calc_xy(r, thetas, x0, y0)
 
 
