@@ -19,7 +19,7 @@ def generate_theta_random(n: int):
     return theta_array
 
 
-def calc_xy(radius, theta: list, x0, y0) -> tuple:
+def calc_xy(radius, theta: list, x0, y0):
     x = radius * np.cos(theta)
     y = radius * np.sin(theta)
     return np.array((x+x0, y+y0)).reshape(-1, 2)
