@@ -1,6 +1,7 @@
 import numpy as np
 import random
 
+# Calculates x, y points based on inputs
 
 def generate_theta_uniform(n: int):
     theta = 0
