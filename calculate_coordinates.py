@@ -59,5 +59,5 @@ if __name__ == '__main__':
     choice = 2  # 1=uniform, 2=random
 
     xy_array = get_xy_array(r, n, x0, y0, choice)   # Returns array of x, y points -> [[x0, y0], [x1, y1], ... [xn, yn]]
-    theta_arr = get_theta_array(n, choice)    # Returns list array of angles
+    theta_arr = get_theta_array(n, choice)    # Returns array of angles
 
