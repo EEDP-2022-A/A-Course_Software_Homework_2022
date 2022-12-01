@@ -13,6 +13,8 @@ def estimate_circ(r, thetas: list):
     for i in range(len(thetas) - 1):
         estimated_circ += calc_distance(r, thetas[i], thetas[i+1])
 
+    last_el = len(thetas) - 1
+    estimated_circ += calc_distance(r, thetas[last_el], thetas[0])
     return estimated_circ
 
 

@@ -27,5 +27,5 @@ def test_calc_distance():
     assert(ec.calc_distance(3, 90, 185) == np.sqrt(18*(1-np.cos(np.radians(95)))))
 
 def test_estimate_cir():
-    thetas = cc.get_theta_array(2, 1)
-    assert(ec.estimate_circ(1, thetas) == 4)
+    thetas = cc.get_theta_array(4, 1)
+    assert(ec.estimate_circ(1, thetas) == 4*(np.sqrt(2*(1-np.cos(np.radians(90))))))
