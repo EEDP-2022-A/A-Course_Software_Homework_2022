@@ -13,6 +13,11 @@ def estimate_area(r,n,choice):
         h = np.sqrt(r**2 - (b/2)**2)
         estimated_area += b*h/2
 
+    last_el = len(thetas) - 1
+    b_last = calc_distance(r, thetas[last_el], thetas[0])
+    h_last = np.sqrt(r**2 - (b_last/2)**2)
+    estimated_area += b_last*h_last/2
+
     return estimated_area
 
 if __name__ == '__main__':
