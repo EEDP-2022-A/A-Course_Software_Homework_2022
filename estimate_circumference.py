@@ -7,8 +7,9 @@ def calc_distance(r, theta1, theta2):
     return np.sqrt(2 * (r**2) * (1 - np.cos(np.radians(theta1) - np.radians(theta2))))
 
 
-def estimate_circ(r, thetas: list):
-    thetas = np.sort(thetas)
+def estimate_circ(r, n, choice):
+    theta_ar = list(get_theta_array(n, choice))
+    thetas = np.sort(theta_ar)
     estimated_circ = 0
     for i in range(len(thetas) - 1):
         estimated_circ += calc_distance(r, thetas[i], thetas[i+1])
@@ -27,8 +28,7 @@ if __name__ == '__main__':
     r = 2
     choice = 2  # 1=uniform, 2=random
 
-    theta_ar = get_theta_array(n, choice)
-    estimate = estimate_circ(r, list(theta_ar))
+    estimate = estimate_circ(r, n, choice)
 
-    print(f'Estimated Circumference using {n} points: {estimate_circ(r, list(theta_ar))}')
+    print(f'Estimated Circumference using {n} points: {estimate}')
     print(f'True Circumference = {2 * np.pi * r}')
