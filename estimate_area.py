@@ -18,6 +18,8 @@ def estimate_area(r,n,choice):
     h_last = np.sqrt(r**2 - (b_last/2)**2)
     estimated_area += b_last*h_last/2
 
+    print(f'Estimated Area using {n} points: {estimated_area}')
+    print(f'True Area: {np.pi*r**2}')
     return estimated_area
 
 if __name__ == '__main__':
@@ -31,6 +33,5 @@ if __name__ == '__main__':
     area_est = estimate_area(r,n,choice)
     area_act = np.pi*r**2
 
-    print(f'Estimated Area using {n} points: {area_est}')
-    print(f'True Area: {area_act}')
+
 

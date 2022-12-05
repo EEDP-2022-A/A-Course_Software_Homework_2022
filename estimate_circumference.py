@@ -16,6 +16,10 @@ def estimate_circ(r, n, choice):
 
     last_el = len(thetas) - 1
     estimated_circ += calc_distance(r, thetas[last_el], thetas[0])
+
+    print(f'Estimated Circumference using {n} points: {estimated_circ}')
+    print(f'True Circumference = {2 * np.pi * r}')
+
     return estimated_circ
 
 
@@ -30,5 +34,4 @@ if __name__ == '__main__':
 
     estimate = estimate_circ(r, n, choice)
 
-    print(f'Estimated Circumference using {n} points: {estimate}')
-    print(f'True Circumference = {2 * np.pi * r}')
+
