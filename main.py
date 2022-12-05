@@ -11,7 +11,7 @@ import numpy as np
 
 def main():
     x0, y0, r, n, choice = get_circle_inputs()
-    #plot_circle_points(r,n,x0,y0,choice)
+    plot_circle_points(r,n,x0,y0,choice)
 
     tic_circ = time.perf_counter()
     estimate_circ(r,n,choice)
@@ -24,8 +24,6 @@ def main():
     toc_circ = time.perf_counter()
     t_calc = (toc_circ - tic_circ)*10**6
     print(f"Actual circumference calculated in {t_calc:0.4f} microseconds")
-
-
 
     tic_area = time.perf_counter()
     estimate_area(r,n,choice)
