@@ -29,7 +29,8 @@ if __name__ == '__main__':
     choice = 2  # 1=uniform, 2=random
 
     area_est = estimate_area(r,n,choice)
+    area_act = np.pi*r**2
 
-    print(f'Estimated Area using {n} points: {estimate_area(r,n,choice)}')
-    print(f'True Area: {np.pi*r**2}')
+    print(f'Estimated Area using {n} points: {area_est}')
+    print(f'True Area: {area_act}')
 
