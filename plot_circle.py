@@ -21,6 +21,7 @@ def plot_circle_points(r,n,x0,y0,choice,title):
                               'weight':'bold',
                               'size': 12,
     })
+    ax.axis('equal') # formatting axes to be equally scaled
     plt.show()
 
 

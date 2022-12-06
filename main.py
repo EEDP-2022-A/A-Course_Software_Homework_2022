@@ -2,7 +2,7 @@
 
 import time
 #from reader import feed
-from get_user_input import get_circle_inputs
+from get_user_input import get_circle_inputs, print_inputs, check_satisfaction
 from estimate_circumference import estimate_circ
 from estimate_area import estimate_area
 from plot_circle import plot_circle_points
@@ -10,8 +10,21 @@ import numpy as np
 
 
 def main():
-    x0, y0, r, n, choice = get_circle_inputs()
-    plot_circle_points(r,n,x0,y0,choice)
+    tic_user_inputs = time.perf_counter()
+    while True:
+        x0, y0, r, n, choice = get_circle_inputs()
+        print_inputs(x0, y0, r, n, choice)
+        if check_satisfaction():
+            break
+        continue
+    title = "A Circle"
+    toc_user_inputs = time.perf_counter()
+    t_user = (toc_user_inputs - tic_user_inputs)
+    if t_user > 30:
+        print(f"Wow, you took forever choosing inputs! A whole {t_user:0.2f} seconds--that's more than half a minute!")
+    else:
+        print(f"Wow, you chose those values quick! Did you even think about what you were entering? It only took you {t_user:0.2f} seconds!")
+    plot_circle_points(r,n,x0,y0,choice, title)
 
     tic_circ = time.perf_counter()
     estimate_circ(r,n,choice)
