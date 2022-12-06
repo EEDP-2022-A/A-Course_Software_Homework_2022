@@ -24,7 +24,10 @@ def main():
         print(f"Wow, you took forever choosing inputs! A whole {t_user:0.2f} seconds--that's more than half a minute!")
     else:
         print(f"Wow, you chose those values quick! Did you even think about what you were entering? It only took you {t_user:0.2f} seconds!")
-    title = "A Circle" # choose title for plot
+    if n < 7:
+        title = "A Sad Circle" # choose title for plot
+    else:
+        title = "A Circle"
     plot_circle_points(r,n,x0,y0,choice, title) # plotting circle
 
     # Estimate circle circumference using numerical methods
